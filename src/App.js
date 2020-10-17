@@ -8,9 +8,15 @@ import React, { useState } from 'react';
 
 function App() {
 
+  /**
+   * Page state hook
+   */
   const [conditional, setConditional] = useState(0);
 
 
+  /**
+   * Sets the page state by returning correct html based on $conditional hook
+   */
   const setPageState = () => {
     if (conditional == 0) return homePage();
 
@@ -40,6 +46,20 @@ function App() {
     return (
       <div>
         {buttons()}
+        <div className = "videos">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YufSybhKtH0"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YufSybhKtH0"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+
+        </div>
+       
+
 
       </div>
     )
@@ -55,7 +75,7 @@ function App() {
       <div>
         <button onClick={() => setConditional(0)} className="object-styling text-class" >Home</button>
         <button onClick={() => setConditional(1)} className="object-styling text-class" >Projects</button>
-        <button onClick={() => setConditional(2)} className="object-styling text-class" >Random Skills</button>
+        {/* <button onClick={() => setConditional(2)} className="object-styling text-class" >Random Skills</button> */}
       </div>
     )
   }

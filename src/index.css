@@ -1,8 +1,5 @@
 body {
   background-color: rgba(3, 2, 2, 0.849);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .object-styling {
@@ -14,4 +11,8 @@ body {
 .text-class {
   color: black;
   font: 15px Arial, sams-serif;
+}
+
+.videos {
+  background-color: red;
 }
