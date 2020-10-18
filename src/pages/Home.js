@@ -1,23 +1,9 @@
+import React from "react";
 
+import Navbar from "../components/Navbar";
 
 function Home() {
-
-
-    /**
-     * Returns the homepage
-     */
-    const homePage = () => {
-
-        return (
-            <div>
-                {navbar()}
-
-            </div>
-        )
-
-    }
-
-
+  return <div>Osama Hanhan loves Jimmy's penis</div>;
 }
 
 export default Home;
