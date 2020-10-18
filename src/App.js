@@ -12,7 +12,7 @@ function App() {
    * Page state hook
    */
   const [conditional, setConditional] = useState(0);
-
+  const [saxVideos, setSaxVideos] = useState(true);
 
   /**
    * Sets the page state by returning correct html based on $conditional hook
@@ -31,8 +31,8 @@ function App() {
 
     return (
       <div>
-        {buttons()}
-
+        {navbar()}
+        
       </div>
     )
 
@@ -45,20 +45,9 @@ function App() {
 
     return (
       <div>
-        {buttons()}
-        <div className = "videos">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/YufSybhKtH0"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
-
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/YufSybhKtH0"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
-
-        </div>
-       
+        {navbar()}
+        <button onClick={() => setSaxVideos(!saxVideos)} className="object-styling text-class">Sax Videos</button>
+        {saxVids()}
 
 
       </div>
@@ -68,9 +57,33 @@ function App() {
 
 
   /**
+   * Based on the saxVideos boolean hook, it returns the sax videos html
+   */
+  const saxVids = () => {
+    if (saxVideos) {
+
+      return (
+      <div className = "videos">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YufSybhKtH0"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+          gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YufSybhKtH0"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+          gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+
+      </div>
+      )
+    }
+       
+  }
+
+  /**
    * Returns the state buttons
    */
-  const buttons = () => {
+  const navbar = () => {
     return (
       <div>
         <button onClick={() => setConditional(0)} className="object-styling text-class" >Home</button>
